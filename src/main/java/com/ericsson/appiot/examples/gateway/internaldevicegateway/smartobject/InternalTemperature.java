@@ -1,6 +1,7 @@
 package com.ericsson.appiot.examples.gateway.internaldevicegateway.smartobject;
 
 import com.ericsson.appiot.gateway.device.Device;
+import com.ericsson.appiot.gateway.device.InitException;
 import com.ericsson.appiot.gateway.device.smartobject.SmartObjectBase;
 import com.ericsson.appiot.gateway.device.smartobject.resource.Resource;
 import com.ericsson.appiot.gateway.device.smartobject.resource.ResourceValueChangedListener;
@@ -41,6 +42,11 @@ public class InternalTemperature extends SmartObjectBase implements ResourceValu
         getResource(RESOURCE_ID_SENSOR_VALUE).addListener(this);
     }
 
+    @Override
+    public void init() throws InitException {
+    	// This is the place to setup db connections etc. if needed.
+    }
+    
     @Override
     public void onResourceValueChanged(Resource resource, Object value) {
         if(resource.getResourceId() == RESOURCE_ID_SENSOR_VALUE) {
