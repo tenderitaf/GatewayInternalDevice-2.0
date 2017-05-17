@@ -7,7 +7,6 @@ import com.ericsson.appiot.gateway.device.smartobject.resource.ResourceValueChan
 import com.ericsson.appiot.gateway.device.smartobject.resource.type.FloatResource;
 import com.ericsson.appiot.gateway.device.smartobject.resource.type.ResetResource;
 import com.ericsson.appiot.gateway.device.smartobject.resource.type.StringResource;
-import com.ericsson.appiot.gateway.model.AppIoTModelProvider;
 import com.ericsson.appiot.gateway.model.ObjectModel;
 
 public class InternalTemperature extends SmartObjectBase implements ResourceValueChangedListener {
@@ -22,10 +21,6 @@ public class InternalTemperature extends SmartObjectBase implements ResourceValu
     public static final int RESOURCE_ID_MAX_MEASURED_VALUE              = 5602;
     public static final int RESOURCE_ID_RESET_MIN_MAX_MEASURED_VALUES   = 5605;
 
-    public InternalTemperature(Device device) {
-    	this(device, AppIoTModelProvider.getObjectModel(OBJECT_ID_TEMPERATURE), OBJECT_ID_TEMPERATURE, 0);
-    }
-    
     /**
      * Creates a Temperature Smart Object.
      * 
